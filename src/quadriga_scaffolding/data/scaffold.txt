@@ -60,3 +60,7 @@ Carousel implementation
 
 Customizations of the design of large (result) tables
 + _static/custom-table.css
+
+Common action to update the metadata
+====================================
++ .github/workflows/update-metadata.yml
