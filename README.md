@@ -102,6 +102,48 @@ M _static/quadriga.css
 
 The diff body is colored git-style (added lines green, removed lines red, hunk headers cyan, file headers bold); the `A`/`M`/`D`/`?`/`!` status lines are never colored. Coloring follows `--color=auto` by default: on when stdout is a terminal, off when the output is piped or redirected, and always off when the [`NO_COLOR`](https://no-color.org) environment variable is set. Pass `--color=always` to force colors (e.g. when piping into a pager that interprets them) or `--color=never` to disable them.
 
+### Enabling video figures in an OER
+
+The scaffold ships three pieces of video support: `_ext/video_figure.py` (renders a
+`{figure}` whose target is an `.mp4`/`.webm`/`.ogv` file as an HTML5 `<video>` instead of
+an `<img>`, keeping caption numbering and cross-references), `_static/video-figure.js`
+(no native controls; click, `Space` or `Enter` toggles play/pause, off-screen videos
+pause) and the matching rules in `_static/quadriga.css`.
+
+`_config.yml` is book-specific and not managed by the scaffold, so each OER has to
+register both pieces itself:
+
+```yaml
+sphinx:
+  local_extensions:
+    video_figure: _ext
+  config:
+    html_js_files:
+      - carousel.js
+      - video-figure.js
+```
+
+After that a figure works like any other, only with a video file as the target:
+
+````markdown
+```{figure} assets/beispiel.mp4
+---
+align: center
+width: 100%
+alt: Beschreibung der Animation für Screenreader.
+---
+Bildunterschrift der Animation.
+```
+````
+
+Prefer videos over animated GIFs: at the same quality an MP4 is roughly 20 times
+smaller, which keeps the GitHub Pages deployment fast. Converting an existing GIF:
+
+```bash
+ffmpeg -i eingabe.gif -an -c:v libx264 -preset slow -crf 23 \
+  -pix_fmt yuv420p -movflags +faststart ausgabe.mp4
+```
+
 ### Output
 
 Each changed path is printed on its own line with a git-style status letter:

@@ -64,6 +64,15 @@ Carousel implementation
 Customizations of the design of large (result) tables
 + _static/custom-table.css
 
+Video figures: a `{figure}` whose target is an .mp4/.webm/.ogv file is rendered
+as an HTML5 <video> (see _ext/video_figure.py), gets responsive styling and a
+play icon from _static/quadriga.css, and pauses/plays on click via
+_static/video-figure.js. _config.yml is book-specific and not managed here, so
+each OER has to register the extension and the script itself (see README).
++ _ext/
++ _ext/video_figure.py
++ _static/video-figure.js
+
 Common action to update the metadata
 ====================================
 + .github/workflows/update-metadata.yml
