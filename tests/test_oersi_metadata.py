@@ -50,9 +50,7 @@ def oersi(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Iterator[ModuleTyp
 
 def test_normalize_github_pages_deep_link_to_book_root(oersi: ModuleType) -> None:
     assert (
-        oersi._normalize_oer_url(
-            "https://quadriga-dk.github.io/Tabelle-Fallstudie-1/Markdown/0_Intro.html"
-        )
+        oersi._normalize_oer_url("https://quadriga-dk.github.io/Tabelle-Fallstudie-1/Markdown/0_Intro.html")
         == "https://quadriga-dk.github.io/Tabelle-Fallstudie-1/"
     )
     assert (
@@ -79,8 +77,7 @@ def test_normalize_github_pages_site_root_is_unchanged(oersi: ModuleType) -> Non
 
 def test_normalize_leaves_other_hosts_unchanged(oersi: ModuleType) -> None:
     assert (
-        oersi._normalize_oer_url("https://oersi.org/resources/intro.html")
-        == "https://oersi.org/resources/intro.html"
+        oersi._normalize_oer_url("https://oersi.org/resources/intro.html") == "https://oersi.org/resources/intro.html"
     )
     assert oersi._normalize_oer_url("https://github.com/quadriga-dk/Text-Fallstudie-1") == (
         "https://github.com/quadriga-dk/Text-Fallstudie-1"
