@@ -71,7 +71,7 @@ $ just scaffold --update ../path/to/oer/
 
 (`just scaffold` uses `uv run scaffold` when `uv` is available, and falls back to the `scaffold` entry point in `.venv/` otherwise.)
 
-In `--update` mode the script overwrites files with their newest packaged version and removes files (and recursively-empty directories) that the manifest marks for deletion. Two kinds of drift are **never** resolved automatically:
+In `--update` mode the script overwrites files with their newest packaged version and removes files (and recursively-empty directories) that the manifest marks for deletion. Three kinds of drift are **never** resolved automatically:
 
 - A directory marked for deletion (`- dir/`) that still contains files is **never** auto-deleted — remove its contents yourself first.
 - Files found inside a managed directory (`+ dir/`) but not listed in the manifest are reported as **untracked** and **never** deleted.
@@ -133,6 +133,7 @@ The package lives under `src/quadriga_scaffolding/`:
 
 - `scaffold.py` — core logic (parsing the manifest, resolving packaged resources, checking the data tree).
 - `cli.py` — command-line entry point (`scaffold` console script).
+- `__main__.py` — enables `python -m quadriga_scaffolding`.
 - `data/` — the files and folders that are common amongst all OERs and that will be used to create or overwrite files in the target OER. **These ship with the installed package.**
 - `data/scaffold.txt` — manifest listing files/directories to be created or overwritten (lines starting with `+ `) and deleted (lines starting with `- `). Every other line is treated as a comment.
 
