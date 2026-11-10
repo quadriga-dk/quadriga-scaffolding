@@ -3,7 +3,7 @@ name = "quadriga-scaffolding"
 version = "0.1.0"
 description = "Update a QUADRIGA OER to contain common files to the latest version."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.11"
 license = "MIT"
 authors = [
     { name = "Hannes Schnaitter", email = "git@schnaitter.info" },
@@ -39,7 +39,7 @@ dev = [
 
 [tool.ruff]
 line-length = 120
-target-version = "py314"
+target-version = "py311"
 extend-exclude = ["src/quadriga_scaffolding/data"]
 
 [tool.ruff.lint]

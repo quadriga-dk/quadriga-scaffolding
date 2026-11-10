@@ -4,7 +4,7 @@ This tool updates a QUADRIGA OER to contain common files (scripts, CSS, JS, ...)
 
 ## Installation (for development)
 
-The project is a standard `pyproject.toml`-based package. The recommended way to set up a development environment is via [`just`](https://github.com/casey/just):
+The project is a standard `pyproject.toml`-based package and requires Python 3.11 or newer. The recommended way to set up a development environment is via [`just`](https://github.com/casey/just):
 
 ```console
 $ git clone https://github.com/quadriga-dk/quadriga-scaffolding.git
