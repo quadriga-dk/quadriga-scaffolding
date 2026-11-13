@@ -50,7 +50,7 @@ Common CSS and JS files for consistent design, assessment, and interactivity
 ============================================================================
 + _static/
 
-Definition of QUADRIGA colors, common admonitions, and more
+Definition of QUADRIGA colors, common admonitions, figure and diagram styling, and more
 + _static/quadriga.css
 
 Drag and Drop Quiz - works in conjunction with `assessment.py`

@@ -144,6 +144,44 @@ ffmpeg -i eingabe.gif -an -c:v libx264 -preset slow -crf 23 \
   -pix_fmt yuv420p -movflags +faststart ausgabe.mp4
 ```
 
+### Enabling Mermaid diagrams in an OER
+
+Diagrams can be written as [Mermaid](https://mermaid.js.org/) instead of being exported as
+SVG or PNG. They are versionable, diffable and reviewable as text, and no separate source
+file has to be maintained. `_static/quadriga.css` styles them like figures instead of code
+blocks (no background, no border, natural height).
+
+`_config.yml` is book-specific and not managed by the scaffold, so each OER has to register
+the extension and the sizing itself. Add `sphinxcontrib-mermaid` to `requirements.in` first,
+then configure the extension:
+
+```yaml
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
+  config:
+    # keep the SVG's aspect ratio instead of the 500px viewport that
+    # sphinxcontrib-mermaid uses by default
+    mermaid_height: auto
+    # the fullscreen button overlaps small diagrams
+    mermaid_fullscreen: false
+```
+
+Then a diagram is just a directive:
+
+````markdown
+```{mermaid}
+:align: center
+:caption: Flussdiagramm: Einstieg, Inhaltskapitel, Reflexion und Resümee, Abschluss.
+
+graph LR
+    A[Einstieg] --> B[Inhaltskapitel] --> C[Reflexion und Resümee] --> D[Abschluss]
+```
+````
+
+Because the diagrams are rendered in the browser, they only work in the web version of a
+book, not in PDF/LaTeX output.
+
 ### Output
 
 Each changed path is printed on its own line with a git-style status letter:
