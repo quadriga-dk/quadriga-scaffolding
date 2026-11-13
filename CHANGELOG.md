@@ -6,6 +6,11 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-13
+
+First stable release. It is identical to `v1.0.0-rc.1` apart from the citation metadata: the Zenodo
+concept DOI is now part of `CITATION.cff` and `README.md`.
+
 ## [1.0.0-rc.1] - 2026-11-13
 
 First public release candidate. It combines everything the QUADRIGA OERs previously copied by
@@ -43,5 +48,6 @@ tool, so an OER can be brought up to date with a single command.
 - The metadata workflow derives a distinctive BibTeX key from the title and registers the R kernel
   without calling `IRkernel::installspec()`.
 
-[Unreleased]: https://github.com/quadriga-dk/quadriga-scaffolding/compare/v1.0.0-rc.1...HEAD
+[Unreleased]: https://github.com/quadriga-dk/quadriga-scaffolding/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/quadriga-dk/quadriga-scaffolding/releases/tag/v1.0.0
 [1.0.0-rc.1]: https://github.com/quadriga-dk/quadriga-scaffolding/releases/tag/v1.0.0-rc.1

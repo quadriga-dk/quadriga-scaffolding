@@ -1,9 +1,9 @@
 # Releasing
 
 Every release does two things: GitHub gets a tag and a release, and Zenodo archives that release
-and mints a DOI. The DOI only exists after the release has been published, so the very first release
-is a release candidate (`v1.0.0-rc.1`): it validates the metadata and yields the concept DOI that
-the final release cites in `README.md` and `CITATION.cff`.
+and mints a DOI. A DOI cannot be reserved before the release exists, which is why the first release
+was a release candidate (`v1.0.0-rc.1`): it validated the metadata and produced the concept DOI that
+`README.md` and `CITATION.cff` now cite for all versions.
 
 ## Version numbering
 
@@ -35,13 +35,17 @@ Tags are created on `main`, after the release pull request has been merged.
 Zenodo archives release candidates as well. That is intentional here: the RC exists to prove that
 the metadata validates and to get the DOI before the final release.
 
-## 3. Add the DOI (second pull request)
+## 3. The DOI is already in place
 
-- [ ] Copy the **concept DOI** (the one that resolves to the latest version) from the Zenodo record.
-- [ ] In `CITATION.cff`, add the DOI as `doi` and as an entry in `identifiers`.
-- [ ] In `README.md`, add the Zenodo badge and the DOI to the *Citation* section.
-- [ ] Merge, then repeat step 1 with `version = "1.0.0"` and publish `v1.0.0` in step 2. The concept
-      DOI stays the same, so the README and `CITATION.cff` do not need to change again.
+`README.md` and `CITATION.cff` cite the Zenodo **concept DOI** (`10.5281/zenodo.24200612`), which
+always resolves to the latest release, so neither file has to change for a new version. Every
+release additionally gets its own version DOI, which is listed on the Zenodo record only.
+
+Only the first archived release had to add it (done for `v1.0.0-rc.1`):
+
+- The concept DOI is listed on the Zenodo record under *Cite all versions*; the DOI of the single
+  record is the version DOI and must not be used for this purpose.
+- It is set as `doi` in `CITATION.cff` and as the badge plus citation example in `README.md`.
 
 ## Notes
 
@@ -50,6 +54,9 @@ the metadata validates and to get the DOI before the final release.
   authors, licence, keywords, abstract/description) must stay consistent.
 - Do not put a DOI into `.zenodo.json`. Zenodo assigns it, and a hard-coded value would be wrong for
   the next version.
+- `communities` in `.zenodo.json` does not add the record to the QUADRIGA community on its own: the
+  community has a closed review policy. Add the published record to the community manually (or ask
+  a community curator) after the release has been archived.
 - A Zenodo record cannot be deleted, only superseded by a new version. If a release fails because of
   its metadata, fix the files and publish the next version.
 - Zenodo only archives releases that are created *after* the repository has been enabled in Zenodo.

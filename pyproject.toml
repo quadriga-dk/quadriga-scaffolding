@@ -1,6 +1,6 @@
 [project]
 name = "quadriga-scaffolding"
-version = "1.0.0-rc.1"
+version = "1.0.0"
 description = "Update a QUADRIGA OER to contain common files to the latest version."
 readme = "README.md"
 requires-python = ">=3.11"
