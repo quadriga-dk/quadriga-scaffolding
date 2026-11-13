@@ -368,8 +368,8 @@ def diff_oer(scaffold: Scaffold, oer_root: Path) -> OerDiff:
     a ``+ dir/`` entry with no matching packaged directory raises while the
     packaged tree is walked. A tracked path that is itself a symlink, or that
     lies under a symlinked directory, is reported ``BLOCKED`` (detail
-    ``"symlink"``) and never written: the tool copies files in cleanly rather
-    than following links out of the OER tree (see :func:`_symlink_in_path`).
+    ``"symlink"``) and never written, so a write cannot follow a link out of
+    the OER tree (see :func:`_symlink_in_path`).
     """
     items: list[DiffItem] = []
     for entry in scaffold.create:
@@ -540,7 +540,7 @@ def _write_packaged(target: Path, oer_root: Path, rel: Path) -> None:
 
     diff_oer already classifies symlinked targets as BLOCKED, but this guards the
     write directly too: following a link would escape the OER tree or clobber the
-    link's target instead of copying the file in cleanly.
+    link's target instead of leaving the path untouched.
     """
     if _symlink_in_path(target, oer_root):
         logging.warning(_SYMLINK_SKIP_MSG.format(path=rel))
