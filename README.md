@@ -1,5 +1,7 @@
 # QUADRIGA scaffolding
 
+[![DOI](https://zenodo.org/badge/1237493467.svg)](https://doi.org/10.5281/zenodo.24200612)
+
 `scaffold` updates a QUADRIGA OER that was created from the
 [QUADRIGA Book_Template](https://github.com/quadriga-dk/Book_Template): it compares the OER against
 the shared files that ship with this package and reports the differences, and with `--update` it
@@ -358,8 +360,8 @@ Version and citation metadata live next to it: `pyproject.toml` (package version
 ## Releases
 
 Releases are tagged `vMAJOR.MINOR.PATCH` and archived on Zenodo, which mints a DOI for every
-version. The checklist for cutting one — bumping the version, tagging on `main`, publishing the
-release and adding the DOI — is in [`RELEASING.md`](RELEASING.md).
+version. The checklist for cutting one — bumping the version, tagging on `main` and publishing the
+release — is in [`RELEASING.md`](RELEASING.md).
 
 ## Citation
 
@@ -367,8 +369,13 @@ release and adding the DOI — is in [`RELEASING.md`](RELEASING.md).
 repository* button and most reference managers read it. [`.zenodo.json`](.zenodo.json) describes the
 Zenodo record that is created for each release.
 
-If you use `scaffold` in a publication or in teaching material, please cite the version you used.
-The Zenodo record lists all versions under one concept DOI.
+If you use `scaffold` in a publication or in teaching material, please cite the version you used:
+
+> Schnaitter, Hannes. (2026). *QUADRIGA scaffolding* [Computer software]. Zenodo.
+> <https://doi.org/10.5281/zenodo.24200612>
+
+The DOI above is the Zenodo concept DOI: it always resolves to the latest release, while every
+release additionally has its own version DOI on the Zenodo record.
 
 ## Development checks
 

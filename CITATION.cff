@@ -18,6 +18,7 @@ authors:
     affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
 repository-code: "https://github.com/quadriga-dk/quadriga-scaffolding"
 url: "https://github.com/quadriga-dk/quadriga-scaffolding"
+doi: "10.5281/zenodo.24200612"
 license: MIT
 keywords:
   - Open Educational Resources
@@ -26,5 +27,5 @@ keywords:
   - Datenkompetenz
   - scaffolding
   - metadata
-version: "1.0.0-rc.1"
+version: "1.0.0"
 date-released: "2026-11-13"
