@@ -1,0 +1,28 @@
+{
+  "upload_type": "software",
+  "title": "QUADRIGA scaffolding",
+  "creators": [
+    {
+      "name": "Schnaitter, Hannes",
+      "affiliation": "Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft",
+      "orcid": "0000-0002-1602-6032"
+    }
+  ],
+  "description": "<p><code>scaffold</code> keeps the shared files of a QUADRIGA Open Educational Resource (OER) in sync with the versions packaged in this repository. Starting from an OER that was created with the <a href=\"https://github.com/quadriga-dk/Book_Template\">QUADRIGA Book_Template</a>, it compares the OER against the packaged metadata scripts (<code>quadriga/</code>), the shared CSS and JavaScript (<code>_static/</code>), the Sphinx extensions (<code>_ext/</code>) and the metadata GitHub Action, reports every difference with a git-style status letter and, with <code>--update</code>, writes the current files and removes retired ones. Files that belong to the individual book (for example <code>_config.yml</code>, <code>_toc.yml</code>, chapters, notebooks, assets, the bibliography and the requirements) are never touched, and symlinks or non-empty directories that the manifest wants to delete are reported instead of being removed.</p><p>The package ships the shared files themselves, so a single command updates an OER without a checkout of the template or of this repository. The tool requires Python 3.11 or newer and installs from Git with <code>uv tool install</code> or <code>pipx</code>.</p><p>QUADRIGA is the data literacy centre for the Berlin-Brandenburg research region. It creates self-study materials for the domains Digital Humanities and Public Administration as Open Educational Resources in the form of Jupyter Books, based on case studies and a data literacy framework. QUADRIGA is funded by the German Federal Ministry of Research, Technology and Space (BMFTR) and by the European Union as part of NextGenerationEU.</p>",
+  "access_right": "open",
+  "license": "mit",
+  "language": "eng",
+  "keywords": [
+    "Open Educational Resources",
+    "Jupyter Book",
+    "Data Literacy",
+    "Datenkompetenz",
+    "scaffolding",
+    "metadata"
+  ],
+  "communities": [
+    {
+      "identifier": "quadriga"
+    }
+  ]
+}

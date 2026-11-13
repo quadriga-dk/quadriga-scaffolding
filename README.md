@@ -352,6 +352,24 @@ The package lives under `src/quadriga_scaffolding/`:
 
 Tests live under `tests/`.
 
+Version and citation metadata live next to it: `pyproject.toml` (package version), `CITATION.cff`
+(citation metadata), `.zenodo.json` (Zenodo record for each release) and `CHANGELOG.md`.
+
+## Releases
+
+Releases are tagged `vMAJOR.MINOR.PATCH` and archived on Zenodo, which mints a DOI for every
+version. The checklist for cutting one — bumping the version, tagging on `main`, publishing the
+release and adding the DOI — is in [`RELEASING.md`](RELEASING.md).
+
+## Citation
+
+[`CITATION.cff`](CITATION.cff) holds the citation metadata for this software; GitHub's *Cite this
+repository* button and most reference managers read it. [`.zenodo.json`](.zenodo.json) describes the
+Zenodo record that is created for each release.
+
+If you use `scaffold` in a publication or in teaching material, please cite the version you used.
+The Zenodo record lists all versions under one concept DOI.
+
 ## Development checks
 
 With [`just`](https://github.com/casey/just):

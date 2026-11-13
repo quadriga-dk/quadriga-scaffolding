@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "QUADRIGA scaffolding"
+abstract: >-
+  scaffold keeps the shared files of a QUADRIGA Open Educational Resource (OER)
+  in sync with the versions packaged here. It compares an OER created from the
+  QUADRIGA Book_Template against the metadata scripts, the shared CSS and
+  JavaScript, the Sphinx extensions and the GitHub Actions that ship with this
+  package, reports the drift and, with --update, installs the current files and
+  removes retired ones. Book-specific files such as _config.yml, _toc.yml,
+  chapters and notebooks are never touched.
+type: software
+authors:
+  - given-names: Hannes
+    family-names: Schnaitter
+    orcid: https://orcid.org/0000-0002-1602-6032
+    affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+repository-code: "https://github.com/quadriga-dk/quadriga-scaffolding"
+url: "https://github.com/quadriga-dk/quadriga-scaffolding"
+license: MIT
+keywords:
+  - Open Educational Resources
+  - Jupyter Book
+  - Data Literacy
+  - Datenkompetenz
+  - scaffolding
+  - metadata
+version: "1.0.0-rc.1"
+date-released: "2026-11-13"

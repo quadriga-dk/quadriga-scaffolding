@@ -1,6 +1,6 @@
 [project]
 name = "quadriga-scaffolding"
-version = "0.1.0"
+version = "1.0.0-rc.1"
 description = "Update a QUADRIGA OER to contain common files to the latest version."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -21,6 +21,11 @@ dev = [
 
 [project.scripts]
 scaffold = "quadriga_scaffolding.cli:main"
+
+[project.urls]
+Repository = "https://github.com/quadriga-dk/quadriga-scaffolding"
+Issues = "https://github.com/quadriga-dk/quadriga-scaffolding/issues"
+Changelog = "https://github.com/quadriga-dk/quadriga-scaffolding/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["uv_build>=0.5,<0.14"]
